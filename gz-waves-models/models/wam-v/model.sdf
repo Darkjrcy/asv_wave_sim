@@ -292,6 +292,28 @@
       name="gz::sim::systems::ApplyJointForce">
       <joint_name>right_engine_joint</joint_name>
     </plugin>
+    <plugin filename="gz-sim-joint-position-controller-system"
+      name="gz::sim::systems::JointPositionController">
+      <joint_name>left_engine_joint</joint_name>
+      <topic>wamv/thrusters/left/pos</topic>
+      <initial_position>0.0</initial_position>
+      <p_gain>20.0</p_gain>
+      <i_gain>0.0</i_gain>
+      <d_gain>2.0</d_gain>
+      <cmd_max>500.0</cmd_max>
+      <cmd_min>-500.0</cmd_min>
+    </plugin>
+    <plugin filename="gz-sim-joint-position-controller-system"
+      name="gz::sim::systems::JointPositionController">
+      <joint_name>right_engine_joint</joint_name>
+      <topic>wamv/thrusters/right/pos</topic>
+      <initial_position>0.0</initial_position>
+      <p_gain>20.0</p_gain>
+      <i_gain>0.0</i_gain>
+      <d_gain>2.0</d_gain>
+      <cmd_max>500.0</cmd_max>
+      <cmd_min>-500.0</cmd_min>
+    </plugin>
 
     <!-- Thruster plugins -->
     <plugin
