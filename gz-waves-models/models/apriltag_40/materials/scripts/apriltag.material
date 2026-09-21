@@ -10,8 +10,8 @@ material vrc/apriltag_40
 
 			texture_unit
 			{
-				texture tagStandard41h12-40.svg
-				filtering anistropic
+				texture tagStandard41h12-40.png
+				filtering anisotropic
 				max_anisotropy 16
 				scale 1 1
 			}

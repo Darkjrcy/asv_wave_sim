@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
-  <world name="wamv_calm">
+  <world name="wamv_mpc">
     <plugin filename="gz-sim-physics-system"
             name="gz::sim::systems::Physics">
     </plugin>
@@ -19,6 +19,13 @@
             name="gz::sim::systems::Imu">
     </plugin>
 
+    <!--Plugins required by PX4-Autopilot-->
+    <plugin name="gz::sim::systems::Contact" filename="gz-sim-contact-system"/>
+    <plugin name="gz::sim::systems::AirPressure" filename="gz-sim-air-pressure-system"/>
+    <plugin name="gz::sim::systems::ApplyLinkWrench" filename="gz-sim-apply-link-wrench-system"/>
+    <plugin name="gz::sim::systems::NavSat" filename="gz-sim-navsat-system"/>
+
+    <!-- Scene of the actual world -->
     <scene>
       <ambient>1.0 1.0 1.0</ambient>
       <background>0.8 0.8 0.8</background>
@@ -33,6 +40,16 @@
       <direction>-0.5 0.1 -0.9</direction>
     </light>
 
+    <!-- Spherical coordiantes added for the PX4 GPS-->
+    <spherical_coordinates>
+      <latitude_deg>51.525571</latitude_deg>
+      <longitude_deg>-3.954478</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+      <surface_model>EARTH_WGS84</surface_model>
+    </spherical_coordinates>
+
+    <!-- Add the waves model-->
     <include>
       <pose>0 0 0 0 0 0</pose>
       <uri>model://calm_waves</uri>
@@ -89,9 +106,37 @@
       </link>
     </model>
 
+
+    <!--Add the WAM-V 16" model-->
     <include>
       <pose>5 0 0 0 0 0</pose>
       <uri>model://wam-v</uri>
     </include>
+
+  <!--Add a radom box in the horizon to add the drone-->
+    <model name="static_platform">
+    <static>true</static>
+    <pose>-50 45 0.25 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>10 10 0.5</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>6 3 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.45 0.45 0.45 1</ambient>
+          <diffuse>0.45 0.45 0.45 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
   </world>
 </sdf>

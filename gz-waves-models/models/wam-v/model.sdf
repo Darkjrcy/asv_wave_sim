@@ -457,5 +457,60 @@
       </control>
     </plugin>
 
+    
+    <!--Add the Apriltags-->
+    <!-- AprilTag 1-->
+    <include>
+      <name>tag_1</name>
+      <uri>model://apriltag_1</uri>
+      <pose relative_to="base_link">0.5 0.3 1.30 0 0 1.5708</pose>
+    </include>
+    <joint name="tag_1_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>tag_1::link</child>
+    </joint>
+    <!-- AprilTag 10-->
+    <include>
+      <name>tag_10</name>
+      <uri>model://apriltag_10</uri>
+      <pose relative_to="base_link">0.5 -0.3 1.30 0 0 1.5708</pose>
+    </include>
+    <joint name="tag_10_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>tag_10::link</child>
+    </joint>
+    <!-- AprilTag 20-->
+    <include>
+      <name>tag_20</name>
+      <uri>model://apriltag_20</uri>
+      <pose relative_to="base_link">-0.5 0.3 1.30 0 0 -1.5708</pose>
+    </include>
+    <joint name="tag_20_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>tag_20::link</child>
+    </joint>
+    <!-- AprilTag 30-->
+    <include>
+      <name>tag_30</name>
+      <uri>model://apriltag_30</uri>
+      <pose relative_to="base_link">-0.5 -0.3 1.30 0 0 -1.5708</pose>
+    </include>
+    <joint name="tag_30_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>tag_30::link</child>
+    </joint>
+    <!-- AprilTag 40-->
+    <include>
+      <name>tag_40</name>
+      <uri>model://apriltag_40</uri>
+      <pose relative_to="base_link">0.0 0.0 1.30 0 0 -1.5708</pose>
+    </include>
+    <joint name="tag_40_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>tag_40::link</child>
+    </joint>
+
+
+
   </model>
 </sdf>
