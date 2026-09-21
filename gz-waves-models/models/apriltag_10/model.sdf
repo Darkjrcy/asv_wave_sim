@@ -18,7 +18,7 @@
           <specular>0 0 0 1</specular>
           <pbr>
             <metal>
-              <albedo_map>model://apriltag_10/materials/textures/tagStandard41h12-10.png</albedo_map>
+              <albedo_map>model://apriltag_10/materials/textures/AprilTag-tag36h11-ID10.png</albedo_map>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
