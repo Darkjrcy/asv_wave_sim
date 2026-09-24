@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.10">
-  <model name="apriltag_1">
+  <model name="fractal_4L_6">
     <static>true</static>
     <pose>0 0 0 0 0 0</pose>
     <link name="link">
@@ -9,7 +9,7 @@
         <geometry>
           <plane>
             <normal>0 0 1</normal>
-            <size>0.225 0.225</size> <!--Remember to add the margin equation size = (size_0(9))/8-->
+            <size>0.5333 0.53333</size> <!--Remember to add the margin equation size = (size_0(16))/15 with size_0 = 0.5-->
           </plane>
         </geometry>
         <material>
@@ -18,7 +18,7 @@
           <specular>0 0 0 1</specular>
           <pbr>
             <metal>
-              <albedo_map>model://apriltag_1/materials/textures/AprilTag-tag36h11-ID1.png</albedo_map>
+              <albedo_map>model://fractal_4L_6/materials/textures/fractal_4L_6.png</albedo_map>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>

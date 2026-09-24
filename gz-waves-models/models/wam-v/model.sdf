@@ -499,15 +499,15 @@
       <parent>base_link</parent>
       <child>tag_30::link</child>
     </joint>
-    <!-- AprilTag 40-->
+    <!-- fractal_4L_6-->
     <include>
-      <name>tag_40</name>
-      <uri>model://apriltag_40</uri>
+      <name>fractal_4L_6</name>
+      <uri>model://fractal_4L_6</uri>
       <pose relative_to="base_link">0.0 0.0 1.30 0 0 -1.5708</pose>
     </include>
-    <joint name="tag_40_joint" type="fixed">
+    <joint name="fractal_4L_6_joint" type="fixed">
       <parent>base_link</parent>
-      <child>tag_40::link</child>
+      <child>fractal_4L_6::link</child>
     </joint>
 
 

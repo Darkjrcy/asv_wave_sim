@@ -9,7 +9,7 @@
         <geometry>
           <plane>
             <normal>0 0 1</normal>
-            <size>0.2 0.2</size>
+            <size>0.225 0.225</size> <!--Remember to add the margin equation size = (size_0(9))/8-->
           </plane>
         </geometry>
         <material>
