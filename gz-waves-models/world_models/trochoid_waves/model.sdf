@@ -1,28 +1,24 @@
-<?xml version='1.0' ?>
+<?xml version='1.0' encoding='utf-8'?>
 <sdf version="1.6">
   <model name="trochoid_waves">
     <static>true</static>
-
-    <plugin
-        filename="gz-waves1-waves-model-system"
-        name="gz::sim::systems::WavesModel">
+    <plugin filename="gz-waves1-waves-model-system" name="gz::sim::systems::WavesModel">
       <static>0</static>
       <update_rate>30</update_rate>
       <wave>
         <tile_size>1024</tile_size>
         <cell_count>128</cell_count>
-
         <algorithm>trochoid</algorithm>
         <number>3</number>
         <scale>1.5</scale>
         <angle>0.4</angle>
-        <amplitude>1.5</amplitude>
+        <amplitude>0.4</amplitude>
         <period>8.0</period>
-        <steepness>2.0</steepness>
+        <steepness>1.0</steepness>
         <direction>1 0</direction>
+        <phase>0.0</phase>
       </wave>
     </plugin>
-
     <link name="base_link">
       <visual name="visual">
         <geometry>
@@ -44,10 +40,7 @@
             </metal>
           </pbr>
         </material>
-
-        <plugin
-            filename="gz-waves1-waves-visual-system"
-            name="gz::sim::systems::WavesVisual">
+        <plugin filename="gz-waves1-waves-visual-system" name="gz::sim::systems::WavesVisual">
           <static>0</static>
           <mesh_deformation_method>DYNAMIC_GEOMETRY</mesh_deformation_method>
           <tiles_x>-0 0</tiles_x>
@@ -55,23 +48,20 @@
           <wave>
             <tile_size>1024</tile_size>
             <cell_count>128</cell_count>
-
             <algorithm>trochoid</algorithm>
             <number>3</number>
             <scale>1.5</scale>
             <angle>0.4</angle>
-            <amplitude>1.5</amplitude>
+            <amplitude>0.4</amplitude>
             <period>8.0</period>
-            <steepness>2.0</steepness>
+            <steepness>1.0</steepness>
             <direction>1 0</direction>
+            <phase>0.0</phase>
           </wave>
-
-          <!-- TODO: should not be required if using PBS shader -->
           <shader language="metal">
             <vertex>models://waves/materials/waves_vs.metal</vertex>
             <fragment>models://waves/materials/waves_fs.metal</fragment>
           </shader>
-
         </plugin>
       </visual>
     </link>

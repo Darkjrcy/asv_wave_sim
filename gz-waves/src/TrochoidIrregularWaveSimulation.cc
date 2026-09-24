@@ -209,7 +209,7 @@ void TrochoidIrregularWaveSimulation::Impl::ElevationAt(
   if (!CheckValid())
     return;
 
-  h = Eigen::ArrayXXd::Zero(nx_ * ny_, 0);
+  h = Eigen::ArrayXXd::Zero(nx_ * ny_, 1);
   for (Index iw = 0; iw < number_; ++iw)
   {
     double a_i = amplitude_[iw];
@@ -247,8 +247,8 @@ void TrochoidIrregularWaveSimulation::Impl::ElevationDerivAt(
   if (!CheckValid())
     return;
 
-  dhdx = Eigen::ArrayXXd::Zero(nx_ * ny_, 0);
-  dhdy = Eigen::ArrayXXd::Zero(nx_ * ny_, 0);
+  dhdx = Eigen::ArrayXXd::Zero(nx_ * ny_, 1);
+  dhdy = Eigen::ArrayXXd::Zero(nx_ * ny_, 1);
   for (Index iw = 0; iw < number_; ++iw)
   {
     double a_i = amplitude_[iw];
@@ -290,8 +290,8 @@ void TrochoidIrregularWaveSimulation::Impl::DisplacementAt(
   if (!CheckValid())
     return;
 
-  sx = Eigen::ArrayXXd::Zero(nx_ * ny_, 0);
-  sy = Eigen::ArrayXXd::Zero(nx_ * ny_, 0);
+  sx = Eigen::ArrayXXd::Zero(nx_ * ny_, 1);
+  sy = Eigen::ArrayXXd::Zero(nx_ * ny_, 1);
   for (Index iw = 0; iw < number_; ++iw)
   {
     double a_i = amplitude_[iw];
@@ -333,9 +333,9 @@ void TrochoidIrregularWaveSimulation::Impl::DisplacementDerivAt(
   if (!CheckValid())
     return;
 
-  dsxdx = Eigen::ArrayXXd::Zero(nx_ * ny_, 0);
-  dsydy = Eigen::ArrayXXd::Zero(nx_ * ny_, 0);
-  dsxdy = Eigen::ArrayXXd::Zero(nx_ * ny_, 0);
+  dsxdx = Eigen::ArrayXXd::Zero(nx_ * ny_, 1);
+  dsydy = Eigen::ArrayXXd::Zero(nx_ * ny_, 1);
+  dsxdy = Eigen::ArrayXXd::Zero(nx_ * ny_, 1);
   for (Index iw = 0; iw < number_; ++iw)
   {
     double a_i = amplitude_[iw];
