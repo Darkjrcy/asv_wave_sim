@@ -110,7 +110,7 @@
   <!--Add a radom box in the horizon to add the drone-->
     <model name="static_platform">
     <static>true</static>
-    <pose>-50 45 4.0 0 0 0</pose>
+    <pose>-50 45 -0.2 0 0 0</pose>
     <link name="link">
       <collision name="collision">
         <geometry>

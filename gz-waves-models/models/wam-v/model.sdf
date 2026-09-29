@@ -29,6 +29,12 @@
           <izz>446</izz>
         </inertia>
       </inertial>
+      <!-- Add the GPS sensor-->
+      <sensor name="navsat_sensor" type="navsat">
+        <always_on>1</always_on>
+        <update_rate>15</update_rate>
+        <topic>/wamv/navsat</topic>
+      </sensor>
     </link>
 
     <!--

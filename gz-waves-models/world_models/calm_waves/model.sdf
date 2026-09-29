@@ -48,8 +48,8 @@
           <tiles_x>-0 0</tiles_x>
           <tiles_y>-0 0</tiles_y>
           <wave>
-            <tile_size>1024</tile_size>
-            <cell_count>128</cell_count>
+            <tile_size>64</tile_size>
+            <cell_count>64</cell_count>
             <algorithm>sinusoid</algorithm>
             <amplitude>0.0</amplitude>
             <period>6.0</period>
