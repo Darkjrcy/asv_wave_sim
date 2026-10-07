@@ -35,6 +35,30 @@
         <update_rate>15</update_rate>
         <topic>/wamv/navsat</topic>
       </sensor>
+      <!-- Add Magenetometer -->
+      <sensor name="magnetometer_sensor" type="magnetometer">
+        <gz_frame_id>base_link</gz_frame_id>
+        <update_rate>20</update_rate>
+        <always_on>1</always_on>
+        <topic>/wamv/magnetometer</topic>
+        <magnetometer>
+          <x>
+            <noise type="gaussian">
+              <stddev>0.000001</stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <stddev>0.000001</stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <stddev>0.000001</stddev>
+            </noise>
+          </z>
+        </magnetometer>
+      </sensor>
     </link>
 
     <!--
