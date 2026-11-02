@@ -5,6 +5,14 @@ cmake_minimum_required(VERSION 3.10.2)
 #============================================================================
 project(gz-waves1 VERSION 1.0.0)
 
+# This workspace runs Gazebo Harmonic. The upstream fallback is Garden when
+# GZ_VERSION is unset, which builds gz-sim7 plugins that cannot be loaded into
+# the gz-sim8 process. Keep explicit version selections intact, but make an
+# unset version match this workspace's runtime.
+if(NOT DEFINED ENV{GZ_VERSION})
+  set(ENV{GZ_VERSION} "harmonic")
+endif()
+
 #============================================================================
 # Find gz-cmake
 #============================================================================
@@ -236,6 +244,11 @@ find_package(Eigen3 REQUIRED)
 
 #--------------------------------------
 # CGAL and its components...
+
+# gz-waves does not use CGAL::data_file_path(), but CGAL requires a valid
+# default directory to avoid a configuration warning.
+set(CGAL_DATA_DIR "${CMAKE_CURRENT_SOURCE_DIR}"
+    CACHE PATH "CGAL optional data directory")
 
 find_package(CGAL REQUIRED COMPONENTS Core)
 

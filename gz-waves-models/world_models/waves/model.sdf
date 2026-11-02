@@ -50,7 +50,7 @@
             filename="gz-waves1-waves-visual-system"
             name="gz::sim::systems::WavesVisual">
           <static>0</static>
-          <mesh_deformation_method>DYNAMIC_GEOMETRY</mesh_deformation_method>
+          <mesh_deformation_method>DYNAMIC_TEXTURE</mesh_deformation_method>
           <tiles_x>-0 0</tiles_x>
           <tiles_y>-0 0</tiles_y>
           <wave>
@@ -63,12 +63,11 @@
             <steepness>2</steepness>
           </wave>
 
-          <!--
-            The section below for shaders is ignored when using
-            DYNAMIC_TEXTURE
-          -->
+          <shader language="glsl">
+            <vertex>materials/waves_vs.glsl</vertex>
+            <fragment>materials/waves_fs.glsl</fragment>
+          </shader>
 
-          <!-- shader program -->
           <shader language="metal">
             <vertex>materials/waves_vs.metal</vertex>
             <fragment>materials/waves_fs.metal</fragment>

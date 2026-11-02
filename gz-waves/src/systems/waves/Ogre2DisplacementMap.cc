@@ -15,6 +15,8 @@
 
 #include "Ogre2DisplacementMap.hh"
 
+#include <cstdint>
+
 #include <gz/rendering/RenderingIface.hh>
 
 namespace gz
@@ -137,10 +139,19 @@ void Ogre2DisplacementMap::InitTextures()
   memset(mNormalMapImage->getRawBuffer(), 0, bufLen);
   memset(mTangentMapImage->getRawBuffer(), 0, bufLen);
 
+  // A single entity may be rendered by multiple scenes, such as the GUI and
+  // camera sensors. Give each displacement-map instance unique texture names
+  // so createOrRetrieveTexture() cannot return another instance's resident
+  // texture, which cannot be resized.
+  const auto instanceId = reinterpret_cast<std::uintptr_t>(this);
+  const std::string textureSuffix =
+      "(" + std::to_string(this->entity) + "_" +
+      std::to_string(instanceId) + ")";
+
   // Create displacement texture
   gzmsg << "Create HeightMap texture\n";
   mHeightMapTex = ogre2TextureManager->createOrRetrieveTexture(
-      "HeightMapTex(" + std::to_string(this->entity) + ")",
+      "HeightMapTex" + textureSuffix,
       Ogre::GpuPageOutStrategy::SaveToSystemRam,
       Ogre::TextureFlags::ManualTexture,
       Ogre::TextureTypes::Type2D);
@@ -154,7 +165,7 @@ void Ogre2DisplacementMap::InitTextures()
   // Create normal texture
   gzmsg << "Create NormalMap texture\n";
   mNormalMapTex = ogre2TextureManager->createOrRetrieveTexture(
-      "NormalMapTex(" + std::to_string(this->entity) + ")",
+      "NormalMapTex" + textureSuffix,
       Ogre::GpuPageOutStrategy::SaveToSystemRam,
       Ogre::TextureFlags::ManualTexture,
       Ogre::TextureTypes::Type2D);
@@ -168,7 +179,7 @@ void Ogre2DisplacementMap::InitTextures()
   // Create tangent texture
   gzmsg << "Create TangentMap texture\n";
   mTangentMapTex = ogre2TextureManager->createOrRetrieveTexture(
-      "TangentMapTex(" + std::to_string(this->entity) + ")",
+      "TangentMapTex" + textureSuffix,
       Ogre::GpuPageOutStrategy::SaveToSystemRam,
       Ogre::TextureFlags::ManualTexture,
       Ogre::TextureTypes::Type2D);

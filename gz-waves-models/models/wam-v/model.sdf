@@ -18,6 +18,39 @@
           </mesh>
         </geometry>
       </collision>
+
+      <!--
+        Enlarged landing deck.
+
+        The deck in WAM-V-Base.dae is part of the combined hull mesh and is
+        approximately 1.8 m x 1.0 m.  This thin box extends its usable landing
+        surface by a factor of 1.5 in X and Y without scaling the pontoons or
+        changing the vehicle's hydrodynamic hull geometry.  Its top remains at
+        the original deck height (approximately z = 1.297 m), just below the
+        fiducial markers at z = 1.30 m.
+      -->
+      <visual name="enlarged_landing_deck_visual">
+        <pose>-0.025 0 1.267 0 0 0</pose>
+        <cast_shadows>true</cast_shadows>
+        <geometry>
+          <box>
+            <size>2.7 1.5 0.06</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.01 0.01 0.01 1</ambient>
+          <diffuse>0.02 0.02 0.02 1</diffuse>
+          <specular>0.08 0.08 0.08 1</specular>
+        </material>
+      </visual>
+      <collision name="enlarged_landing_deck_collision">
+        <pose>-0.025 0 1.267 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>2.7 1.5 0.06</size>
+          </box>
+        </geometry>
+      </collision>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>180</mass>
@@ -528,6 +561,60 @@
     <joint name="tag_30_joint" type="fixed">
       <parent>base_link</parent>
       <child>tag_30::link</child>
+    </joint>
+    <include>
+      <name>tag_40</name>
+      <uri>model://apriltag_40</uri>
+      <pose relative_to="base_link">0.5 0.0 1.30 0 0 -1.5708</pose>
+    </include>
+    <joint name="tag_40_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>tag_40::link</child>
+    </joint>
+    <include>
+      <name>tag_50</name>
+      <uri>model://apriltag_50</uri>
+      <pose relative_to="base_link">-0.5 0.0 1.30 0 0 -1.5708</pose>
+    </include>
+    <joint name="tag_50_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>tag_50::link</child>
+    </joint>
+    <include>
+      <name>tag_60</name>
+      <uri>model://apriltag_60</uri>
+      <pose relative_to="base_link">0.0 0.4 1.30 0 0 -1.5708</pose>
+    </include>
+    <joint name="tag_60_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>tag_60::link</child>
+    </joint>
+    <include>
+      <name>tag_70</name>
+      <uri>model://apriltag_70</uri>
+      <pose relative_to="base_link">0.0 -0.4 1.30 0 0 -1.5708</pose>
+    </include>
+    <joint name="tag_70_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>tag_70::link</child>
+    </joint>
+    <include>
+      <name>tag_80</name>
+      <uri>model://apriltag_80</uri>
+      <pose relative_to="base_link">0.8 0.0 1.30 0 0 -1.5708</pose>
+    </include>
+    <joint name="tag_80_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>tag_80::link</child>
+    </joint>
+    <include>
+      <name>tag_90</name>
+      <uri>model://apriltag_90</uri>
+      <pose relative_to="base_link">-0.8 0.0 1.30 0 0 -1.5708</pose>
+    </include>
+    <joint name="tag_90_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>tag_90::link</child>
     </joint>
     <!-- fractal_4L_6-->
     <include>
