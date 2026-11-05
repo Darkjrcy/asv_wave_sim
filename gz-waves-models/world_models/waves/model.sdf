@@ -49,7 +49,7 @@
         <plugin
             filename="gz-waves1-waves-visual-system"
             name="gz::sim::systems::WavesVisual">
-          <static>0</static>
+          <static>1</static>
           <mesh_deformation_method>DYNAMIC_TEXTURE</mesh_deformation_method>
           <tiles_x>-0 0</tiles_x>
           <tiles_y>-0 0</tiles_y>

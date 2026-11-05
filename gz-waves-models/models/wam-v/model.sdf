@@ -565,7 +565,7 @@
     <include>
       <name>tag_40</name>
       <uri>model://apriltag_40</uri>
-      <pose relative_to="base_link">0.5 0.0 1.30 0 0 -1.5708</pose>
+      <pose relative_to="base_link">0.7 0.0 1.30 0 0 -1.5708</pose>
     </include>
     <joint name="tag_40_joint" type="fixed">
       <parent>base_link</parent>
@@ -574,7 +574,7 @@
     <include>
       <name>tag_50</name>
       <uri>model://apriltag_50</uri>
-      <pose relative_to="base_link">-0.5 0.0 1.30 0 0 -1.5708</pose>
+      <pose relative_to="base_link">-0.7 0.0 1.30 0 0 -1.5708</pose>
     </include>
     <joint name="tag_50_joint" type="fixed">
       <parent>base_link</parent>
@@ -583,7 +583,7 @@
     <include>
       <name>tag_60</name>
       <uri>model://apriltag_60</uri>
-      <pose relative_to="base_link">0.0 0.4 1.30 0 0 -1.5708</pose>
+      <pose relative_to="base_link">0.0 0.5 1.30 0 0 -1.5708</pose>
     </include>
     <joint name="tag_60_joint" type="fixed">
       <parent>base_link</parent>
@@ -592,7 +592,7 @@
     <include>
       <name>tag_70</name>
       <uri>model://apriltag_70</uri>
-      <pose relative_to="base_link">0.0 -0.4 1.30 0 0 -1.5708</pose>
+      <pose relative_to="base_link">0.0 -0.5 1.30 0 0 -1.5708</pose>
     </include>
     <joint name="tag_70_joint" type="fixed">
       <parent>base_link</parent>
@@ -601,7 +601,7 @@
     <include>
       <name>tag_80</name>
       <uri>model://apriltag_80</uri>
-      <pose relative_to="base_link">0.8 0.0 1.30 0 0 -1.5708</pose>
+      <pose relative_to="base_link">1.0 0.0 1.30 0 0 -1.5708</pose>
     </include>
     <joint name="tag_80_joint" type="fixed">
       <parent>base_link</parent>
@@ -610,7 +610,7 @@
     <include>
       <name>tag_90</name>
       <uri>model://apriltag_90</uri>
-      <pose relative_to="base_link">-0.8 0.0 1.30 0 0 -1.5708</pose>
+      <pose relative_to="base_link">-1.0 0.0 1.30 0 0 -1.5708</pose>
     </include>
     <joint name="tag_90_joint" type="fixed">
       <parent>base_link</parent>
